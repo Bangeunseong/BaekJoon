@@ -74,5 +74,3 @@ int main() {
 	for (int i = 0; i < N; i++) { int key; scanf("%d", &key); insertItem(key); }
 	for (int i = 0; i < N; i++) printf("%d\n", removeMin());
 }*/
-//수 정렬하기 3(O(n + k) -> 카운팅 정렬)) -> 자세한 내용은 인터넷에 정보가 많음
-
