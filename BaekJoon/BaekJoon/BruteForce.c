@@ -145,3 +145,25 @@ int main() {
 	printf("%d", min);
 }*/
 //¿µÈ­°¨µ¶ ¼ò
+/*#include <stdio.h>
+#pragma warning(disable:4996)
+int HaveB_Number(int B_num) {
+	int w = B_num; int h = 0;
+	while (w != 0) {
+		if (w % 10 == 6) { h = h * 10 + w % 10; if (h == 666) return 1; }
+		else h = 0;
+		w /= 10;
+	}
+	return 0;
+}
+int GetnthNumber(int n) {
+	int base = 666;
+	for (int i = 0; i < n; i++) {
+		while (!HaveB_Number(++base));
+	}
+	return base;
+}
+int main() {
+	int n; scanf("%d", &n);
+	printf("%d", GetnthNumber(n - 1));
+}*/
