@@ -21,10 +21,10 @@
     <ClCompile Include="BruteForce.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="SetNMap.cpp">
+    <ClCompile Include="Geometry.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Geometry.c">
+    <ClCompile Include="SetNMap.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

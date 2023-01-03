@@ -125,7 +125,7 @@
   <ItemGroup>
     <ClCompile Include="BruteForce.c" />
     <ClCompile Include="Geometry.c" />
-    <ClCompile Include="SetNMap.cpp" />
+    <ClCompile Include="SetNMap.c" />
     <ClCompile Include="Sort.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
