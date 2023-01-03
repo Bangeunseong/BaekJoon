@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BruteForce.c" />
+    <ClCompile Include="Geometry.c" />
     <ClCompile Include="SetNMap.cpp" />
     <ClCompile Include="Sort.c" />
   </ItemGroup>
