@@ -115,3 +115,37 @@ int main() {
 		printf("%d\n", possiblelocation(x1, y1, r1, x2, y2, r2));
 	}
 }*/
+//¾î¸°¿ÕÀÚ
+/*#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#pragma warning(disable:4996)
+typedef struct Prince {
+	int start_x, start_y;
+	int end_x, end_y;
+}Prince;
+typedef struct Cosmos {
+	int x, y; int radius;
+}Cosmos;
+int CalculateEnterExitCount(Prince p, Cosmos *c, int m) {
+	int cnt = 0;
+	for (int i = 0; i < m; i++) {
+		double diff1 = (p.start_x - c[i].x)*(p.start_x - c[i].x) + (p.start_y - c[i].y)*(p.start_y - c[i].y);
+		double diff2 = (p.end_x - c[i].x)*(p.end_x - c[i].x) + (p.end_y - c[i].y)*(p.end_y - c[i].y);
+		double rad = pow(c[i].radius, 2.0);
+		if (diff1 < rad) { if (diff2 >= rad) cnt++; }
+		else if (diff2 < rad) { if (diff1 >= rad) cnt++; }
+	}
+	return cnt;
+}
+int main() {
+	int n, m; scanf("%d", &n);
+	Prince p; Cosmos *c = NULL; 
+	for (int i = 0; i < n; i++) {
+		scanf("%d%d%d%d", &p.start_x, &p.start_y, &p.end_x, &p.end_y);
+		scanf("%d", &m); c = (Cosmos *)malloc(sizeof(Cosmos)*m);
+		for (int j = 0; j < m; j++) { scanf("%d%d%d", &c[j].x, &c[j].y, &c[j].radius); }
+		printf("%d\n", CalculateEnterExitCount(p, c, m));
+		free(c);
+	}
+}*/
