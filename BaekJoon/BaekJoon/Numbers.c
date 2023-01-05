@@ -127,11 +127,11 @@ int main() {
 int main() {
 	int n, k; scanf("%d%d", &n, &k);
 	int dp[1001][1001] = { 0, };
-	/*for (int i = 0; i <= n; i++) {
-		for (int j = 0; j <= i; j++) {
+	for (int i = 0; i <= n; i++) {
+		for (int j = 0; j <= k; j++) {
 			if (j == 0 || j == i) dp[i][j] = 1;
 			else { dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j]) % 10007; }
 		}
-	}*/
+	}
 	printf("%d", dp[n][k]);
 }
