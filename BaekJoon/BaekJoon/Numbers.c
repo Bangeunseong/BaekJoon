@@ -122,16 +122,87 @@ int main() {
 	printf("%d", GetCombination(n, k));
 }*/
 //이항계수 2
-#include <stdio.h>
+/*#include <stdio.h>
+#include <stdlib.h>
 #pragma warning(disable:4996)
 int main() {
 	int n, k; scanf("%d%d", &n, &k);
-	int dp[1001][1001] = { 0, };
+	int **dp = (int **)malloc(sizeof(int*) * (n + 1));
+	for (int i = 0; i <= n; i++) dp[i] = (int *)malloc(sizeof(int) * (n + 1));
+
 	for (int i = 0; i <= n; i++) {
-		for (int j = 0; j <= k; j++) {
+		for (int j = 0; j <= i; j++) {
 			if (j == 0 || j == i) dp[i][j] = 1;
 			else { dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j]) % 10007; }
 		}
 	}
 	printf("%d", dp[n][k]);
+}*/
+//다리 놓기
+/*#include <stdio.h>
+#include <stdlib.h>
+#pragma warning(disable:4996)
+int main() {
+	int m; scanf("%d", &m); 
+	for (int p = 0; p < m; p++) {
+		int n, k; scanf("%d%d", &k, &n);
+		unsigned long **dp = (unsigned long **)malloc(sizeof(unsigned long*) * (n + 1));
+		for (int i = 0; i <= n; i++) dp[i] = (unsigned long *)malloc(sizeof(unsigned long) * (n + 1));
+
+		for (int i = 0; i <= n; i++) {
+			for (int j = 0; j <= i; j++) {
+				if (j == 0 || j == i) dp[i][j] = 1;
+				else { dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j]); }
+			}
+		}
+		printf("%d\n", dp[n][k]);
+		for (int i = 0; i <= n; i++) free(dp[i]); free(dp);
+	}
+}*/
+//패션왕 신해빈
+/*#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#pragma warning(disable:4996)
+typedef struct Cloth {
+	char *name, *use; int visited;
+}Cloth;
+int PossibleFashionCount(Cloth *C, int m) {
+	int x[30] = { 0, }; int n = 0;
+	for (int i = 0; i < m; i++) {
+		if (!C[i].visited) {
+			for (int j = i; j < m; j++) if (strcmp(C[i].use, C[j].use) == 0) { C[j].visited = 1; x[n]++; }
+			n++;
+		}
+	}
+
+	int sum = 1;
+	for (int i = 0; i < n; i++) { sum = sum * (x[i] + 1); }
+	return sum - 1;
 }
+int main() {
+	int n, P_num = 0; scanf("%d", &n); Cloth *C = NULL;
+	for (int i = 0; i < n; i++) {
+		int m; scanf("%d", &m); C = (Cloth *)malloc(sizeof(Cloth)*m);
+
+		for (int j = 0; j < m; j++) {
+			char name[21]; char use[21]; scanf("%s %s", name, use);
+			C[j].name = (char *)malloc(sizeof(char)*(strlen(name) + 1)); strcpy(C[j].name, name);
+			C[j].use = (char *)malloc(sizeof(char)*(strlen(use) + 1)); strcpy(C[j].use, use);
+			C[j].visited = 0;
+		}
+		
+		printf("%d\n", PossibleFashionCount(C, m));
+
+		for (int j = 0; j < m; j++) { free(C[j].name); free(C[j].use); }
+		free(C);
+	}
+}*/
+//팩토리얼 0의 개수 --- 0이 나오는 경우의 수는 주로 짝수와 5의 곱으로 인해 생김 --- 5의 배수 생각 25의 배수 생각 125의 배수 생각 625의 배수 생각 ....
+/*#include <stdio.h>
+#include <stdlib.h>
+#pragma warning(disable:4996)
+int main() {
+	int n; scanf("%d", &n);
+	printf("%d", n / 5 + n / 25 + n / 125);
+}*/

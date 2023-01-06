@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BackTracking.c" />
     <ClCompile Include="BruteForce.c" />
     <ClCompile Include="Geometry.c" />
     <ClCompile Include="Numbers.c" />
