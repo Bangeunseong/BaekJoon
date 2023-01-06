@@ -106,7 +106,10 @@ void FillupSudokuBoard(int **SudokuBoard, int depth) {
 		for (int i = y / 3 * 3; i < y / 3 * 3 + 3; i++) {
 			for (int j = x / 3 * 3; j < x / 3 * 3 + 3; j++) if (!SudokuBoard[i][j]) Q[SudokuBoard[i][j] - 1] = 1;
 		}
-		for (int i = 0; i < 9; i++) { if (!Q[i]) { SudokuBoard[y][x] = i + 1; FillupSudokuBoard(SudokuBoard, depth + 1); } }
+		for (int i = 0; i < 9; i++) {
+			printf(" %d", Q[i]);
+			if (!Q[i]) { SudokuBoard[y][x] = i + 1; FillupSudokuBoard(SudokuBoard, depth + 1); }
+		}
 	}
 }
 int main() {
